@@ -9,7 +9,5 @@ public class Main {
             game.reset();
             System.out.println(game.toString());
         }
-
-
     }
 }
