@@ -44,15 +44,28 @@ public class Game {
         int door = 0;
         do {
             door = rand.nextInt(3);
-        } while (door == choice);
+        } while (door == choice || doors[door].isWinner());
         taken[1]=door;
+        doors[door].open();
     }
 
     public void reset() {
         taken = new int[2];
+        for (Door door: doors){
+            door.closeDoor();
+        }
     }
 
     public String getTaken1(){
         return String.valueOf(taken[1]);
+    }
+
+    public String doorIsClose(){
+        StringBuilder builder = new StringBuilder();
+        for (Door door : doors){
+            builder.append(door.isClosed());
+            builder.append("; ");
+        }
+        return builder.toString();
     }
 }

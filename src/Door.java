@@ -19,6 +19,10 @@ public class Door {
         return close;
     }
 
+    public void closeDoor(){
+        this.close = true;
+    }
+
     public void open() {
         close = false;
     }
